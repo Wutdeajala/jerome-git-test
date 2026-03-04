@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header.jsx";
-import Footer from "../components/Footer.jsx";
 import hrH from "../assets/images/team/staff/Tosin.jpg";
 import operationsH from "../assets/images/team/staff/Nura.jpg";
-import architectH from "../assets/images/team/staff/Ibusi.jpg";
+import architectH from "../assets/images/team/staff/ibusi.jpg";
 import coo from "../assets/images/team/staff/joshua.jpg";
 import financeH from "../assets/images/team/staff/Saadu.jpg";
 import "../components/Leadership.css";
