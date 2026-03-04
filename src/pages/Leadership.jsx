@@ -4,12 +4,12 @@ import director1 from '../assets/images/director/SMA.png';
 import director2 from '../assets/images/director/Hajiya Garba.jpg';
 import director3 from '../assets/images/director/Babatunde.png';
 import '../components/leadership.css';
-
+import bg2 from "../assets/images/bimaworld.png";
 
 const directors = [
   {
     id: 1,
-    name: "Alhaji Sambo",
+    name: "Alhaji Sambo Garba, MON",
     title: "Executive Chairman",
     image: chairman, // add image later
     bio: [ "Alhaji Sambo Garba, MON, is a distinguished and versatile entrepreneur with a strong presence in the Nigerian economy. He began his career in the public sector with the Securities and Exchange Commission, where he spent nearly a decade overseeing issuance approvals and monitoring securities transactions to ensure compliance with the Investment and Securities Act.",
@@ -38,7 +38,7 @@ const directors = [
       "In addition to her achievements in the hospitality industry, she holds key leadership positions in other thriving enterprises. She serves as a Director at Bima Mines Ltd. and Chemcraft Nigeria Ltd., companies actively engaged in mining and industrial services. Her involvement at the executive level reflects her deep understanding of business operations, strategic planning, and cross-sectoral management.",
       "With a broad portfolio, she brings a wealth of hands-on experience and business acumen."
     ]
-  },
+  },/*
   {
     id: 4,
     name: "Mr. Babatunde Richards Olomolehin",
@@ -51,7 +51,7 @@ const directors = [
       "His dual expertise as both developer and operator offers him a deep understanding of market dynamics, enabling him to deliver projects that are not only structurally and financially sound but also thoughtfully designed for optimal user experience."
     ]
   },
-  {
+  
     id: 5,
     name: "Director Name",
     title: "Development Director",
@@ -64,7 +64,7 @@ const directors = [
     title: "Strategy Director",
     image: "",
     bio: "Biography goes here."
-  }
+  */
 ];
 
 function Leadership() {
@@ -104,15 +104,15 @@ function Leadership() {
 
   return (<>
   
-     <section className="leadership-hero">
-      <div className="hero-overlay"></div>
+     <section className="leadership-hero"  style={{ backgroundImage: `url(${bg2})` }}>
+      <div className="staff-overlay"></div>
 
       <div className="hero-container">
         <span className="hero-label">Meet The Directors</span>
 
         <h1 className="hero-title">Our Leadership</h1>
 
-        <p className="hero-text">
+        <p className="herol-text">
           Our leadership team combines vision, experience and innovation to
           deliver exceptional real estate developments and lasting value
           across Nigeria.

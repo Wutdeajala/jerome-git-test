@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import logo1 from '../assets/images/logos/logo1.png'; // white logo
+import logo1 from "../assets/images/logos/logo1.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -10,27 +10,28 @@ const Navbar = () => {
   // Prevent body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [menuOpen]);
+
+  // Corrected: use setMenuOpen, not setIsOpen
   const closeMenu = () => {
-  setIsOpen(false);
-};
+    setMenuOpen(false);
+  };
 
   return (
     <>
       <header className="header">
         <div className="header-container">
-
           {/* LEFT — LOGO */}
           <div className="logo">
-            <Link to='/' onClick={closeMenu}>
-              <img
-                src={logo1}  // Always use white logo
-                alt="Bima Shelter Logo"
-              />
+            <Link to="/" onClick={closeMenu}>
+              <img src={logo1} alt="Bima Shelter Logo" />
             </Link>
           </div>
 
-          {/* CENTER — NAVIGATION */}
+          {/* CENTER — NAVIGATION (desktop) */}
           <nav className="nav-links">
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
@@ -39,7 +40,6 @@ const Navbar = () => {
 
           {/* RIGHT — SOCIAL + CTA + HAMBURGER */}
           <div className="right-section">
-
             <div className="social-icons">
               <a
                 href="https://ng.linkedin.com/company/bima-shelter-limited"
@@ -60,7 +60,7 @@ const Navbar = () => {
               </a>
             </div>
 
-            <Link className="contact-btn" to='/contact'>
+            <Link className="contact-btn" to="/contact">
               Contact Us
             </Link>
 
@@ -72,7 +72,6 @@ const Navbar = () => {
               <span></span>
               <span></span>
             </div>
-
           </div>
         </div>
       </header>
@@ -93,17 +92,27 @@ const Navbar = () => {
           />
           <div
             className="close-btn"
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
             ×
           </div>
         </div>
 
         <nav className="mobile-nav">
-          <Link to='/' onClick={closeMenu}>Home</Link>
-          <Link to='/about' onClick={closeMenu}>About</Link>
-          <Link to='/properties' onClick={closeMenu}>Properties</Link>
-          <Link className="mobile-contact-btn" to='/contact' onClick={closeMenu}> 
+          <Link to="/" onClick={closeMenu}>
+            Home
+          </Link>
+          <Link to="/about" onClick={closeMenu}>
+            About
+          </Link>
+          <Link to="/properties" onClick={closeMenu}>
+            Properties
+          </Link>
+          <Link
+            className="mobile-contact-btn"
+            to="/contact"
+            onClick={closeMenu}
+          >
             Contact Us
           </Link>
         </nav>

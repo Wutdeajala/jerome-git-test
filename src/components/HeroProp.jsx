@@ -11,17 +11,17 @@ const HeroProp = () => {
     >
       <div className="cover"></div>
 
-      <div className="her-text">
-        <h1>Let’s Build Your Shelter</h1>
-
-        <p className="her-subtext">
+      <div className="hero-content">
+        <div className="her-text">
+          <h1>Let’s Build Your Shelter</h1>
+        <p>
           Discover Premium properties designed
         </p>
-        <p className="her-subtext">
+        <p>
           for Comfort, Elegance and Value.
         </p>
       </div>
-
+      </div>
       <div className="her-butns">
         <Link to="/contact" className="btn-secondary">
           Get In Touch

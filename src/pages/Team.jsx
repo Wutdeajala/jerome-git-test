@@ -5,7 +5,7 @@ import architectH from "../assets/images/team/staff/ibusi.jpg";
 import coo from "../assets/images/team/staff/joshua.jpg";
 import financeH from "../assets/images/team/staff/Saadu.jpg";
 import '../components/leadership.css';
-
+import bg2 from "../assets/images/bimaworld.png";
 const directors = [
   {
     id: 1,
@@ -52,14 +52,14 @@ const directors = [
     bio: ["Saadu Kamaldeen Adebayo is a Chartered Accountant and Certified Procurement Professional with over 10 years of experience in finance, treasury, budget management, and procurement, with a strong focus on the public sector.",
       "Currently, he serves as the Finance Manager at Bima Shelter Limited, where he leads initiatives in budget planning, vendor management, internal controls, and process optimization."
     ]
-  },
+  },/*
   {
     id: 6,
     name: "Director Name",
     title: "Strategy Director",
     image: "",
     bio: "Biography goes here."
-  }
+  }*/
 ];
 
 function Team() {
@@ -98,15 +98,15 @@ function Team() {
 
   return (<>
   
-     <section className="leadership-hero">
-      <div className="hero-overlay"></div>
+     <section className="leadership-hero" style={{ backgroundImage: `url(${bg2})` }}>
+      <div className="staff-overlay"></div>
 
       <div className="hero-container">
         <span className="hero-label">Meet The Team</span>
 
         <h1 className="hero-title">Our Real Estate Team</h1>
 
-        <p className="hero-text">
+        <p className="herol-text">
           Our team combines vision, experience and innovation to
           deliver exceptional real estate developments and lasting value
           across Nigeria.

@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  padding: 0 20px
 }
 
 
@@ -20,45 +20,52 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
-
+.hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 1100px;
+  width: 100%;
+  text-align: left;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
 
 /* Headline */
 .her-text {
-  position: absolute;
-  top: 25%;
-  left: 5%;
+  max-width: 650px;
   z-index: 5;
   color: #ffffff;
   max-width: 600px;
   /* Animation */
   opacity: 0;                 /* start invisible */
-  transform: translateX(-100px); /* start offscreen left */
+  transform: translateX(-60px); /* start offscreen left */
   animation: slideInLeft 1s ease-out forwards; /* play once */
   animation-delay: 0.5s;       /* delay after page load */
 }
 .her-text h1 {
-  width: 700px;
+  width: 400px;
   font-family: "Playfair Display", serif; /* classic luxury serif */
-  font-size: 4rem;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
   line-height: 1.2;
   letter-spacing: 0.5px;
   margin-bottom: 30px;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 800;
+  margin-bottom: 20px;
 }
 
 .her-text p {
-  width: 400px;
-  margin-bottom: 10px;
-  font-family: "Lato", "Helvetica Neue", sans-serif;
-  font-weight: 400;   /* regular for body text */
-  font-size: 1.2rem;
-  line-height: 1.6;
-  letter-spacing: 0.2px;
-  margin-bottom: 10px;
+ font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+  font-weight: 400;
+  margin-bottom: 8px;
   color: #ffffff;
 }
 /* ================= BUTTON ================= */
@@ -124,16 +131,11 @@
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
-  .her-text {
-    top: 15%;
-    left: 5%;
-    max-width: 90%;
+    .hero-content {
+    text-align: center;
+    align-items: center;
   }
-
-  .her-text h1 {
-    font-size: 2.2rem;
-  }
-
+  
   .her-butns .btn-secondary {
     padding: 12px 28px;
     font-size: 0.95rem;
