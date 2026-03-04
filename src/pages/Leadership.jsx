@@ -3,7 +3,8 @@ import chairman from '../assets/images/director/Alhaji sambo.png';
 import director1 from '../assets/images/director/SMA.png';
 import director2 from '../assets/images/director/Hajiya Garba.jpg';
 import director3 from '../assets/images/director/Babatunde.png';
-import "../components/leadership.css";
+import '../components/leadership.css';
+
 
 const directors = [
   {
