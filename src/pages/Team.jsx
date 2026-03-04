@@ -4,7 +4,7 @@ import operationsH from "../assets/images/team/staff/Nura.jpg";
 import architectH from "../assets/images/team/staff/ibusi.jpg";
 import coo from "../assets/images/team/staff/joshua.jpg";
 import financeH from "../assets/images/team/staff/Saadu.jpg";
-import "../components/Leadership.css";
+import '../components/leadership.css';
 
 const directors = [
   {
