@@ -1,0 +1,123 @@
+/* ============================= */
+/* LUXURY ABOUT STATS SECTION   */
+/* ============================= */
+
+.about-stats {
+  background: white;
+  padding: 15px 8%;
+  position: relative;
+  overflow: hidden;
+
+}
+
+/* Subtle top divider */
+.stats-divider {
+  width: 60px;
+  height: 2px;
+  background: #0b2e22; /* very dark luxury green */
+  margin: 0 auto 20px auto;
+  opacity: 0.8;
+}
+
+/* Grid Layout */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Individual Stat */
+.stat-card {
+  text-align: center;
+  position: relative;
+  transition: transform 0.4s ease, opacity 0.8s ease;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Stagger animation */
+.stat-card:nth-child(1) { animation-delay: 0.2s; }
+.stat-card:nth-child(2) { animation-delay: 0.4s; }
+.stat-card:nth-child(3) { animation-delay: 0.6s; }
+.stat-card:nth-child(4) { animation-delay: 0.8s; }
+
+/* Number Styling */
+.stat-value {
+  font-size: clamp(2.8rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: #0b2e22; /* luxury dark green */
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.stat-value:hover{
+  font-size: clamp(2.8rem, 4vw, 3.8rem);
+  transition: ease-in 0.3s;
+}
+/* Label Styling */
+.stat-label {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #555;
+  font-weight: 400;
+}
+
+/* Subtle underline accent */
+.stat-underline {
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #0b2e22;
+  margin: 18px auto 0;
+  transition: width 0.4s ease;
+}
+
+/* Hover Effect */
+.stat-card:hover {
+  transform: translateY(-8px);
+}
+
+.stat-card:hover .stat-underline {
+  width: 40px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN            */
+/* ============================= */
+
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-stats {
+    padding: 90px 6%;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+  }
+}

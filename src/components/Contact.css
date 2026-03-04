@@ -1,0 +1,134 @@
+/* ================= SECTION ================= */
+
+.contact-section {
+  padding: 100px 8%;
+  background: #f7f9f8;
+}
+.contact-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+}
+
+/* ================= HEADINGS ================= */
+
+.contact-heading,
+.info-heading {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #051b14; /* Deep green */
+  font-weight: 600;
+}
+
+/* ================= FORM CARD ================= */
+
+.contact-form-card {
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Inputs */
+.form-input,
+.form-textarea {
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #051b14;
+  box-shadow: 0 0 0 2px rgba(1, 77, 64, 0.1);
+}
+
+/* Textarea */
+.form-textarea {
+  resize: none;
+}
+
+/* Button */
+.submit-btn {
+  padding: 14px;
+  background: #051b14;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(1, 77, 64, 0.2);
+}
+
+/* ================= INFO CARD ================= */
+
+.contact-info-card {
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+.info-description {
+  margin-bottom: 30px;
+  color: #444;
+  line-height: 1.6;
+}
+.info-item {
+  margin-bottom: 25px;
+}
+.info-item h4 {
+  
+  font-size: 1.5rem;
+  color: #051b14;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.divider{
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, #1b3b2f, #fafafa);
+}
+.info-item p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 70px 5%;
+  }
+
+  .contact-form-card,
+  .contact-info-card {
+    padding: 30px;
+  }
+
+  .contact-heading,
+  .info-heading {
+    font-size: 1.6rem;
+  }
+}

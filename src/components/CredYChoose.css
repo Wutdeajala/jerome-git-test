@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap');
+
+/* ================= SECTION BASE ================= */
+
+.credibility-why {
+  box-sizing: border-box; 
+  overflow-x: hidden;
+  width: 100%;
+  background: white;
+  padding: 0px 15px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= TRUST STATS ================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.stat-item .icon {
+  font-size: 28px;
+  color: #0b2e22;
+}
+
+.stat-item h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: #0b2e22;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.stat-item span {
+  margin-top: 15px;
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: #006400;
+  color: white;
+  padding: 6px 18px;
+  border-radius: 40px;
+}
+
+/* ================= PARTNER LOGOS ================= */
+
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+}
+
+.partner-logos img {
+  height: 40px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+
+.partner-logos img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 100, 0, 0.2);
+}
+
+/* ================= DIVIDER ================= */
+
+.divider {
+  width: 60%;
+  height: 1px;
+  background: rgba(0, 100, 0, 0.2);
+  margin: 0 auto 10px auto;
+}
+
+/* ================= WHY CHOOSE GRID ================= */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ================= ANIMATION INITIAL STATE ================= */
+
+.why-text{
+  opacity: 0;
+  transition: all 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why-features {
+  opacity: 0;
+  transition: all 1.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Text slides from LEFT */
+.why-text {
+  transform: translateX(-120px);
+}
+
+/* Features slide from RIGHT */
+.why-features {
+  transform: translateX(120px);
+}
+
+/* ================= WHEN SECTION IS VISIBLE ================= */
+
+.credibility-why.show .why-text,
+.credibility-why.show .why-features {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Optional stagger for premium feel */
+.credibility-why.show .why-text {
+  transition-delay: 0.5s;
+}
+
+.credibility-why.show .why-features {
+  transition-delay: 0.65s;
+}
+.feature-icon svg {
+  color: #1b3d2f; /* deep luxury green */
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+/* ================= TEXT SIDE ================= */
+
+.why-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  color: #0b2e22;
+  margin-bottom: 20px;
+}
+
+.why-text h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: black;
+}
+
+.why-text p {
+  margin-top: 40px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 2.3;
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* ================= FEATURES ================= */
+
+.why-features {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.feature {
+  padding: 25px;
+  color: #0b2e22;
+  border: 2px solid;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 100, 0, 0.12);
+}
+
+.feature-icon {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #0b2e22;
+}
+
+.feature h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #0b2e22;
+}
+
+.feature p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: black;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .stat-item h2 {
+    font-size: 60px;
+  }
+
+  .why-text h2 {
+    font-size: 36px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .credibility-why {
+    padding: 80px 20px;
+  }
+
+  .stat-item h2 {
+    font-size: 48px;
+  }
+
+}

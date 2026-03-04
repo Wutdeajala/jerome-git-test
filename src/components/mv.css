@@ -1,0 +1,126 @@
+/* ============================= */
+/* BIMA SHELTER LTD - ABOUT PAGE */
+/* ============================= */
+
+.about-content {
+  width: 100%;
+  padding: 60px 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SECTION TITLE */
+.section-title {
+  text-align: center;
+  color: #0b2e22; /* very dark green */
+  font-size: 1.9rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+/* ============================= */
+/* OUR STORY */
+/* ============================= */
+
+.about-story {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.story-container {
+  width: 85%;
+  max-width: 1200px;
+  border: 1.3px solid #0b2e22;
+  padding: 60px 70px;
+  line-height: 1.9;
+  font-size: 1rem;
+  color: #444;
+  text-align: justify;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.story-container p {
+  margin-bottom: 22px;
+}
+
+/* ============================= */
+/* VISION & MISSION */
+/* ============================= */
+
+.vision-mission {
+  width: 85%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.vm-card {
+  padding: 50px 40px;
+  border: 1.3px solid #0b2e22;
+  border-radius: 10px;
+  background: #ffffff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.vm-card h3 {
+  text-align: center;
+  color: #0b2e22;
+  font-size: 1.3rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.vm-card p {
+  text-align: justify;
+  line-height: 1.9;
+  color: #444;
+}
+
+/* Subtle hover for modern touch */
+.vm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .vision-mission {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-container {
+    padding: 50px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-content {
+    padding: 90px 0;
+  }
+
+  .story-container {
+    width: 90%;
+    padding: 40px 25px;
+  }
+
+  .vision-mission {
+    width: 90%;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}

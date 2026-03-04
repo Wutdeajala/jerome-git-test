@@ -1,0 +1,108 @@
+/* ===== SECTION ===== */
+.p-section {
+  background: #ffffff;
+  padding: 80px 5%;
+}
+
+/* ===== CONTAINER ===== */
+.p-container {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+/* ===== CARD ===== */
+.p-card {
+  height: 320px;
+  width: 85%;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+/* Optional subtle scale effect on mobile */
+@media (max-width: 768px) {
+  .swiper-slide .p-card {
+    transform: scale(0.9);
+  }
+
+  .swiper-slide-active .p-card {
+    transform: scale(1);
+  }
+}
+
+/* ===== CENTERED OVERLAY ===== */
+.cards-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  background: #0b2e22;
+  padding: 25px 20px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+}
+
+.cards-overlay h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.divida {
+  width: 60%;
+  height: 2px;
+  background: #ffffff;
+  margin: 10px auto;
+}
+
+
+.cards-overlay p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ===== NAVIGATION ARROWS ===== */
+
+/* Push arrows further out */
+.swiper-button-prev {
+  left: -60px;
+}
+
+.swiper-button-next {
+  right: -60px;
+}
+
+/* Bigger arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #052e1b; /* very dark green */
+  width: 40px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Arrow icon size */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ===== HOVER EFFECT ===== */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}

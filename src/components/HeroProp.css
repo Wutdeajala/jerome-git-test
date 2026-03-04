@@ -1,0 +1,142 @@
+/* ================= HERO SECTION ================= */
+
+.MyHero {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+/* ================= DARK OVERLAY ================= */
+
+.cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+
+/* Headline */
+.her-text {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  z-index: 5;
+  color: #ffffff;
+  max-width: 600px;
+  /* Animation */
+  opacity: 0;                 /* start invisible */
+  transform: translateX(-100px); /* start offscreen left */
+  animation: slideInLeft 1s ease-out forwards; /* play once */
+  animation-delay: 0.5s;       /* delay after page load */
+}
+.her-text h1 {
+  width: 700px;
+  font-family: "Playfair Display", serif; /* classic luxury serif */
+  font-size: 4rem;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.her-text p {
+  width: 400px;
+  margin-bottom: 10px;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-weight: 400;   /* regular for body text */
+  font-size: 1.2rem;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+/* ================= BUTTON ================= */
+
+.her-butns {
+  margin-top: 30px;
+  position: absolute;
+  top: 75%; /* adjust to 80% if you prefer */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+   opacity: 0;
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 1s;
+}
+ /* Button */
+.her-butns .btn-secondary {
+ font-family: sans-serif; /* matches subtext */
+  font-weight: 550;       /* slightly bold for CTA prominence */
+  font-size: 1rem;
+  text-transform: uppercase;  /* professional look */
+  letter-spacing: 1px;        /* subtle spacing for luxury feel */
+  padding: 10px 26px;
+  border-radius: 15px;
+  border: 1.5px solid #0f3b2e;
+  background-color: white;
+  color: #0f3b2e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  text-align: center;
+  text-decoration: none;
+}
+ 
+.btn-secondary:hover {
+  background-color: #ffffff;
+  color: #0f3b2e;  /* matching brand color */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* subtle elevation */
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 100px); /* start below */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);     /* final centered position */
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .her-text {
+    top: 15%;
+    left: 5%;
+    max-width: 90%;
+  }
+
+  .her-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .her-butns .btn-secondary {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+  
+}

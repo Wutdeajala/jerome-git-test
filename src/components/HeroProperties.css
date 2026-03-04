@@ -1,0 +1,232 @@
+/* ================= HERO PROPERTIES ================= */
+.hero-properties {
+  position: relative;
+  width: 100%;           /* 90% width as you wanted */
+  margin: 0 auto;       /* centers the hero */
+  height: 60vh;     /* pushes next section down */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;  /* optional for smooth edges */
+}
+
+/* ================= SLIDES ================= */
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* ================= DARK OVERLAY ================= */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 27, 20, 0.65); /* slightly darker for readability */
+  z-index: 2;
+}
+
+/* ================= HERO CONTENT ================= */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* Logo */
+.hero-content img {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Headline */
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+/* Subtitle */
+.hero-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  max-width: 700px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+/* ================= BUTTONS ================= */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Primary button */
+.hero-buttons .btn-primary {
+  background-color: #0f3b2e; /* dark green */
+  color: #fff;
+  border: none;
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: #067a4b;
+  transform: scale(1.05);
+}
+
+/* Secondary button */
+.hero-buttons .btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: #fff;
+  color: #0f3b2e;
+  transform: scale(1.05);
+}
+
+/* ================= SCROLL INDICATOR ================= */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transform: rotate(-45deg);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0% { transform: rotate(-45deg) translate(0,0); }
+  50% { transform: rotate(-45deg) translate(-5px,5px); }
+  100% { transform: rotate(-45deg) translate(0,0); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Background slides */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+}
+.slide.active {
+  opacity: 1;
+}
+
+/* Dark overlay to boost text contrast */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+/* Centered text */
+.hero-text {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.4rem;
+  font-family: "Inter", sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 1.9rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+}

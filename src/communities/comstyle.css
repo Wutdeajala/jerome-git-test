@@ -1,0 +1,331 @@
+/* GLOBAL */
+.parkvilla {
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 70vh;
+  /*url(https://3adblimited.com/wp-content/uploads/2021/01/project-park-villas-3adb-limited.jpg);*/
+  background: url('https://3adblimited.com/wp-content/uploads/2021/01/project-park-villas-3adb-limited.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6));
+}
+
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  width: 25px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+.scroll-indicator::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  background: white;
+  transform: translateX(-50%);
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% { opacity: 0; transform: translate(-50%, 0); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 12px); }
+}
+
+/* OVERVIEW */
+.overview {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.overview img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* RESIDENCES */
+.residence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.residence-card {
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+}
+
+.residence-card:hover {
+  transform: translateY(-8px);
+}
+
+.residence-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.card-content ul {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+/* AMENITIES */
+.amenities {
+  background: #f8f8f8;
+  padding: 80px 0;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.amenity-item {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.amenity-item:hover {
+  transform: translateY(-5px);
+}
+
+.amenity-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 15px;
+  background: #0f3d2e;
+  border-radius: 50%;
+}
+
+/* LIFESTYLE */
+.lifestyle {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.lifestyle img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* LOCATION */
+.location {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.map-placeholder {
+  background: white;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.map-img {
+  height: 400px;
+  width: 80%;
+  display: flex;
+}
+
+/* CTA */
+.cta {
+  background: #0f3d2e;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 14px 35px;
+  border: none;
+  background: white;
+  color: #0f3d2e;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #d4d4d4;
+}
+
+/* FADE IN */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.prox-cards {
+  height: 150px;
+  overflow: visible;
+  position: absolute;
+  bottom: -80px; /* Pull cards down into map */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: center;
+}/* INDIVIDUAL CARD */
+.prox-card {
+  background: #fff;
+  width: 125px;
+  padding: 20px 15px;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(63, 63, 63, 0.1);
+  transition: transform 0.3s ease;
+  overflow: visible; 
+  height: auto;
+}
+.prox-card:hover {
+  transform: translateY(-6px);
+}/* TEXT */
+.prox-card h4 {
+  margin-bottom: 4%;
+  color: #222;
+}
+.prox-card p {
+  font-size: 14px;
+  color: #222;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  position: static;
+  height: auto;
+}  
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .residence-grid,
+  .amenities-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .overview,
+  .lifestyle,
+  .location {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero { height: 50vh; }
+  .residence-grid,
+  .amenities-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .prox-cards {
+  height: 100px;
+  overflow: visible;
+  position: absolute;
+  bottom: -100px; /* Pull cards down into map */
+  left: 20%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+}
+.map-img {
+  height: 350px;
+  width: 80%;
+  display: flex;
+}
+}
