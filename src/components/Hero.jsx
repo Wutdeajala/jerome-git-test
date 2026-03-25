@@ -13,7 +13,7 @@ const HeroLanding = () => {
           <div className="write-up">
             {/*<img src={logo1} alt="Bima Shelter Logo" />*/}
             <h1>Let’s Build Your Shelter</h1>
-            <p className="hero-subtext">
+            <p className="home-sbt">
               Premium properties designed for Comfort, Elegance and Value.
             </p>
             

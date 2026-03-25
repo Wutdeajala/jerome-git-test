@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import logo1 from "../assets/images/logos/logo1.png";
+import logo2 from "../assets/images/logos/greelogo.png";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -15,37 +20,73 @@ const Navbar = () => {
     };
   }, [menuOpen]);
 
-  // Corrected: use setMenuOpen, not setIsOpen
+  // Scroll effect only for home page
+  useEffect(() => {
+    if (!isHomePage) return;
+
+    const handleScroll = () => {
+      if (window.scrollY > 60) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHomePage]);
+
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
   return (
     <>
-      <header className="header">
+      <header
+        className={`header ${
+          isHomePage ? (scrolled ? "scrolled" : "home-header") : "normal-header"
+        }`}
+      >
+        
+          <nav className="mb-nav">
+          <div className="hamburger" onClick={() => setMenuOpen(true)}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <img
+            src={logo1}
+            alt="Bima Shelter Logo"
+            className="mb-lg"
+          />
+          </nav>
+        
         <div className="header-container">
-          {/* LEFT — LOGO */}
+          
+          {/* LOGO */}
+          
           <div className="logo">
             <Link to="/" onClick={closeMenu}>
               <img src={logo1} alt="Bima Shelter Logo" />
             </Link>
           </div>
 
-          {/* CENTER — NAVIGATION (desktop) */}
+          {/* DESKTOP NAV */}
           <nav className="nav-links">
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/properties">Properties</Link>
           </nav>
 
-          {/* RIGHT — SOCIAL + CTA + HAMBURGER */}
+          {/* RIGHT SECTION */}
           <div className="right-section">
             <div className="social-icons">
               <a
                 href="https://ng.linkedin.com/company/bima-shelter-limited"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
               >
                 <FaLinkedinIn />
               </a>
@@ -54,7 +95,6 @@ const Navbar = () => {
                 href="https://www.instagram.com/bimashelterltd/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram"
               >
                 <FaInstagram />
               </a>
@@ -64,15 +104,9 @@ const Navbar = () => {
               Contact Us
             </Link>
 
-            <div
-              className="hamburger"
-              onClick={() => setMenuOpen(true)}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+
           </div>
+
         </div>
       </header>
 
@@ -84,39 +118,44 @@ const Navbar = () => {
 
       {/* MOBILE PANEL */}
       <div className={`mobile-panel ${menuOpen ? "open" : ""}`}>
-        <div className="mobile-header">
-          <img
-            src={logo1}
-            alt="Emerald Estates Logo"
-            className="mobile-logo"
-          />
-          <div
-            className="close-btn"
-            onClick={closeMenu}
-          >
-            ×
-          </div>
-        </div>
 
-        <nav className="mobile-nav">
-          <Link to="/" onClick={closeMenu}>
-            Home
-          </Link>
-          <Link to="/about" onClick={closeMenu}>
-            About
-          </Link>
-          <Link to="/properties" onClick={closeMenu}>
-            Properties
-          </Link>
-          <Link
-            className="mobile-contact-btn"
-            to="/contact"
-            onClick={closeMenu}
-          >
-            Contact Us
-          </Link>
-        </nav>
-      </div>
+  {/* MOBILE HEADER */}
+  <div className="mobile-header">
+    <img
+      src={logo2}
+      alt="Bima Shelter Logo"
+      className="mb-lg2"
+    />
+
+    <div className="close-btn" onClick={closeMenu}>
+      ✕
+    </div>
+  </div>
+  <div className="underline"></div>
+
+  {/* MOBILE NAV LINKS */}
+  <nav className="mobile-nav">
+    <Link to="/" onClick={closeMenu}>
+      Home
+    </Link>
+    <Link to="/about" onClick={closeMenu}>
+      About
+    </Link>
+    <Link to="/properties" onClick={closeMenu}>
+      Properties
+    </Link>
+    <div className="underline"></div>
+
+    <Link
+      className="mobile-contact-btn"
+      to="/contact"
+      onClick={closeMenu}
+    >
+      Contact Us
+    </Link>
+  </nav>
+
+</div>
     </>
   );
 };

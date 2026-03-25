@@ -1,0 +1,262 @@
+/* ════════════════════════════════════════════════
+   CTABanner.css
+   ════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,500;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── Banner shell ── */
+.cta-banner {
+  position: relative;
+  padding: 110px 5%;
+  overflow: hidden;
+  text-align: center;
+
+  /* Background image — overlay applied via pseudo-element */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Dark overlay — sits between image and content */
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 27, 20, 0.88) 0%,
+    rgba(11, 46, 34, 0.80) 50%,
+    rgba(26, 71, 49, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+/* ── Decorative circle motifs ── */
+.cta-banner__circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cta-banner__circle--1 {
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgba(184, 150, 46, 0.1);
+  top: -200px;
+  right: -150px;
+}
+
+.cta-banner__circle--2 {
+  width: 400px;
+  height: 400px;
+  border: 1px solid rgba(184, 150, 46, 0.07);
+  bottom: -160px;
+  left: -100px;
+}
+
+.cta-banner__circle--3 {
+  width: 200px;
+  height: 200px;
+  background: rgba(184, 150, 46, 0.04);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Content ── */
+.cta-banner__content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* ── Eyebrow ── */
+.cta-banner__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: white;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.1s;
+}
+
+.cta-banner--visible .cta-banner__eyebrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-banner__eyebrow-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: rgba(137, 233, 148, 0.5);
+  flex-shrink: 0;
+}
+
+/* ── Heading ── */
+.cta-banner__heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.22s;
+}
+
+.cta-banner--visible .cta-banner__heading {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-banner__heading em {
+  font-style: italic;
+  color: white;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+
+/* ── Subtitle ── */
+.cta-banner__sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.36s;
+}
+
+.cta-banner--visible .cta-banner__sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Action buttons ── */
+.cta-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.5s;
+}
+
+.cta-banner--visible .cta-banner__actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-banner__btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 36px;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Gold filled 
+.hp-hero__btn--primary {
+  background: #2168193e;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 15px;
+}
+
+.hp-hero__btn--primary:hover {
+  background:  rgba(255, 255, 255, 0.45);;
+  border-color:  #2168193e;
+  transform: translateY(-2px);
+}
+
+.hp-hero__btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  background: #2168193e;
+  transform: translateY(-2px);
+}*/
+.cta-banner__btn--primary {
+  background: white;
+  color: #0a3628;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 15px;
+}
+
+.cta-banner__btn--primary:hover {
+  background:  #0a3628;
+  color: white;
+  border-color:  #2168193e;
+  transform: translateY(-2px);
+}
+
+/* Ghost white */
+.cta-banner__btn--ghost {
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 15px;
+}
+
+.cta-banner__btn--ghost:hover {
+  background:  white;
+  color: #0a3628;
+  border-color:  #2168193e;
+  transform: translateY(-2px);
+}
+
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .cta-banner {
+    padding: 80px 5%;
+  }
+
+  .cta-banner__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-banner__btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 28px;
+  }
+
+  .cta-banner__eyebrow-line {
+    display: none;
+  }
+}

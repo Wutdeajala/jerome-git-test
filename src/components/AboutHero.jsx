@@ -1,36 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "./AboutHero.css";
-import image from "../assets/images/bimaworld.png"
+import bg2 from "../assets/images/bimaworld.png";
 
 const AboutHero = () => {
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    const el = heroRef.current;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("hero-visible");
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    observer.observe(el);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className="about-hero" ref={heroRef} img src={image}>
-      <div className="hero-content">
-        <div className="hero-glass">
-          <h1>About Bima Shelter</h1>
-          <p className="hero-small">
-            Discover the story behind Bima Shelter Ltd.
-          </p>
-        </div>
+    <section className="about-hero" style={{ backgroundImage: `url(${bg2})` }}>
+      <div className="about-hero__overlay" />
+      <div className="about-hero__content">
+        <p className="about-hero__eyebrow">Est. 2013 · Abuja, Nigeria</p>
+        <h1 className="about-hero__title">About Bima Shelter</h1>
+        <div className="about-hero__rule" aria-hidden="true" />
+        <p className="about-hero__sub">
+          Discover the story behind Bima Shelter Ltd.
+        </p>
       </div>
     </section>
   );

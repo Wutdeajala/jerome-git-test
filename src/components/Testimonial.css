@@ -1,0 +1,252 @@
+/* ════════════════════════════════════════════════
+   Testimonials.css
+   ════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --tm-dark:    #0b2e22;
+  --tm-green:   #1a4731;
+  --tm-gold:    #b8962e;
+  --tm-gold-lt: #d4af50;
+  --tm-bg:      #f7f5f1;
+  --tm-white:   #ffffff;
+  --tm-text:    #1a1a1a;
+  --tm-muted:   #6b6b6b;
+  --tm-border:  #e4e0d8;
+  --tm-ease:    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Section shell ── */
+.tm-section {
+  position: relative;
+  background: var(--tm-bg);
+  padding: 96px 5%;
+  overflow: hidden;
+}
+
+/* ── Decorative background circles ── */
+.tm-bg-motif__circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tm-bg-motif__circle--1 {
+  width: 480px;
+  height: 480px;
+  border: 1px solid rgba(11, 46, 34, 0.05);
+  top: -160px;
+  right: -120px;
+}
+
+.tm-bg-motif__circle--2 {
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(184, 150, 46, 0.07);
+  bottom: -100px;
+  left: -80px;
+}
+
+/* ── Section header ── */
+.tm-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 64px;
+}
+
+.tm-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--tm-dark);
+  margin-bottom: 16px;
+}
+
+.tm-eyebrow__line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--tm-white);
+  flex-shrink: 0;
+}
+
+.tm-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 700;
+  color: var(--tm-dark);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+.tm-subheading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--tm-muted);
+  line-height: 1.75;
+}
+
+/* ── Grid ── */
+.tm-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ── Card ── */
+.tm-card {
+  position: relative;
+  background: var(--tm-white);
+  border: 1px solid var(--tm-dark);
+  border-radius: 12px;
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--tm-ease),
+              transform 0.8s var(--tm-ease),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.tm-section--visible .tm-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tm-card:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Large decorative opening quote */
+.tm-card__quote-mark {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(184, 150, 46, 0.12);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Stars */
+.tm-card__stars {
+  display: flex;
+  gap: 3px;
+}
+
+.tm-card__star {
+  color: var(--tm-gold);
+  font-size: 0.85rem;
+}
+
+/* Quote text */
+.tm-card__text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.8;
+  margin: 0;
+  flex: 1;
+}
+
+/* Thin divider */
+.tm-card__divider {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(to right, var(--tm-green), var(--tm-muted));
+  border-radius: 1px;
+}
+
+/* Author row */
+.tm-card__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Avatar circle */
+.tm-card__avatar {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--tm-dark);
+  color: var(--tm-white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(46, 184, 161, 0.3);
+}
+
+.tm-card__name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--tm-dark);
+  margin-bottom: 3px;
+}
+
+.tm-card__title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--tm-muted);
+  line-height: 1.4;
+}
+
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .tm-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Make third card span full width on tablet */
+  .tm-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .tm-section {
+    padding: 72px 4%;
+  }
+
+  .tm-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tm-card:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+}

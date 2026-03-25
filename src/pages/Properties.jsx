@@ -19,9 +19,7 @@ const Props = () => {
       {// <PropertyFilter onFilterChange={setFilters} />
       //<AllProperties filters={filters} /> 
       }
-      <HeroProperties/>
       <AllProperties/>
-      <FeaturedProperties/>
     </>
   );
 };

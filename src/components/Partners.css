@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+.credibility-section {
+  background: #f7f5f1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.credibility-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scrollLogos 24s linear infinite;
+  will-change: transform;
+}
+
+.logo-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 28px;
+}
+
+.logo-item img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: grayscale(40%) opacity(0.85);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.logo-item img:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .credibility-section {
+    padding: 14px 4%;
+  }
+  .logo-marquee {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  .logo-track {
+    animation-duration: 18s;
+  }
+
+  .logo-item {
+    padding: 0 18px;
+  }
+
+  .logo-item img {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .credibility-section {
+    padding: 12px 4%;
+  }
+  .logo-marquee {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
+  .logo-track {
+    animation-duration: 14s;
+  }
+
+  .logo-item {
+    padding: 0 14px;
+  }
+
+  .logo-item img {
+    height: 75px;
+  }
+}

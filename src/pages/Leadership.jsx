@@ -121,7 +121,7 @@ function Leadership() {
         <div className="hero-divider"></div>
       </div>
 
-      <div className="scroll-indicator">
+      <div>
         <span></span>
       </div>
     </section>
