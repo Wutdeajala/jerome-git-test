@@ -1,0 +1,246 @@
+/* =================================================================
+   animations.css  ·  Smooth entrance transitions for all sections
+   
+   HOW IT WORKS:
+   Every animatable element starts invisible (opacity: 0) and slightly
+   offset. When it enters the viewport, the class "in-view" is added
+   by a small IntersectionObserver script (see bottom of this file
+   for the <script> snippet to add to your app).
+   
+   Alternatively — if you prefer pure CSS with no JS — the
+   @keyframes below also run automatically on page load for elements
+   that are already in view on first render.
+   ================================================================= */
+
+/* ── Keyframe definitions ───────────────────────────────────────── */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Base: everything starts hidden, waiting to animate ─────────── */
+/* These classes are applied in your JSX — add them alongside
+   the existing class names. e.g. className="fp-section__header animate" */
+
+.animate {
+  opacity: 0;
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: no-preference) {
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* Once JS adds .in-view the element becomes visible */
+.animate.in-view {
+  opacity: 1;
+  transform: none !important;
+}
+
+/* ── Slide up variant ── */
+.animate-up {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.animate-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Fade in only (no movement) ── */
+.animate-fade {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.animate-fade.in-view {
+  opacity: 1;
+}
+
+/* ── Scale up ── */
+.animate-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.animate-scale.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Stagger delay utilities — apply to children ── */
+/* e.g. give each card a different delay for a cascade effect */
+.stagger-1  { transition-delay: 0.05s !important; }
+.stagger-2  { transition-delay: 0.12s !important; }
+.stagger-3  { transition-delay: 0.19s !important; }
+.stagger-4  { transition-delay: 0.26s !important; }
+.stagger-5  { transition-delay: 0.33s !important; }
+.stagger-6  { transition-delay: 0.40s !important; }
+.stagger-7  { transition-delay: 0.47s !important; }
+.stagger-8  { transition-delay: 0.54s !important; }
+.stagger-9  { transition-delay: 0.61s !important; }
+
+/* =================================================================
+   SECTION-SPECIFIC RULES
+   These target your existing class names directly — no JSX changes
+   needed for these. They use animation-fill-mode: both so the
+   element stays visible after the animation completes.
+   ================================================================= */
+
+/* ── Section header ── */
+.fp-section__header {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.1s;
+}
+
+.fp-section__eyebrow {
+  animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.05s;
+}
+
+.fp-section__title {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.15s;
+}
+
+.fp-section__subtitle {
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.22s;
+}
+
+/* ── Filter band slides in from below ── */
+.pf-filter-band {
+  animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.28s;
+}
+
+/* ── Each filter tile scales up with stagger ── */
+.pf-tile:nth-child(1) { animation: scaleUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.35s; }
+.pf-tile:nth-child(2) { animation: scaleUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.42s; }
+.pf-tile:nth-child(3) { animation: scaleUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.49s; }
+.pf-tile:nth-child(4) { animation: scaleUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.56s; }
+.pf-tile:nth-child(5) { animation: scaleUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.63s; }
+
+/* ── Active filter label fades in ── */
+.pf-active-label {
+  animation: fadeIn 0.35s ease both;
+}
+
+/* ── Property cards — staggered slide up ── */
+/* Cards enter one after another for a satisfying cascade */
+.fp-grid .fp-card-link:nth-child(1)  .fp-card { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.1s;  }
+.fp-grid .fp-card-link:nth-child(2)  .fp-card { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.18s; }
+.fp-grid .fp-card-link:nth-child(3)  .fp-card { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.26s; }
+.fp-grid .fp-card-link:nth-child(4)  .fp-card { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.18s; }
+.fp-grid .fp-card-link:nth-child(5)  .fp-card { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.26s; }
+.fp-grid .fp-card-link:nth-child(6)  .fp-card { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.34s; }
+.fp-grid .fp-card-link:nth-child(7)  .fp-card { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.26s; }
+.fp-grid .fp-card-link:nth-child(8)  .fp-card { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.34s; }
+.fp-grid .fp-card-link:nth-child(9)  .fp-card { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.42s; }
+
+/* ── Card image zoom on hover — smoother than before ── */
+.fp-card .fp-card__image {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity  0.3s ease;
+}
+
+.fp-card:hover .fp-card__image {
+  transform: scale(1.06);
+}
+
+/* ── Card body content fades in slightly after image ── */
+.fp-card__body {
+  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: inherit;
+}
+
+/* ── Card hover — lift effect, smoother shadow transition ── */
+.fp-card {
+  transition: transform   0.38s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow  0.38s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.28s ease;
+}
+
+.fp-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.14);
+  border-color: transparent;
+}
+
+/* ── Badge entrance ── */
+.fp-card__badge {
+  animation: fadeLeft 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.3s;
+}
+
+/* ── Features row slides up last ── */
+.fp-card__features {
+  animation: fadeUp 0.4s ease both;
+  animation-delay: 0.15s;
+}
+
+/* ── Address link smooth color transition ── */
+.fp-card__address {
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.fp-card__address:hover {
+  gap: 8px;
+}
+
+/* ── Reduced motion — respect OS accessibility setting ── */
+@media (prefers-reduced-motion: reduce) {
+  .fp-section__header,
+  .fp-section__eyebrow,
+  .fp-section__title,
+  .fp-section__subtitle,
+  .pf-filter-band,
+  .pf-tile,
+  .pf-active-label,
+  .fp-card,
+  .fp-card__body,
+  .fp-card__badge,
+  .fp-card__features,
+  .animate,
+  .animate-up,
+  .animate-fade,
+  .animate-scale {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

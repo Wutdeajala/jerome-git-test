@@ -1,22 +1,22 @@
 import CredYChoose from "../components/CredYChoose.jsx";
 import FeaturedProperties from "../components/FeaturedProperties.jsx"
-import StaffCard from "../components/Saffcards.jsx";
-import Hcard from "../components/Hcard.jsx";
-import Credibile from "../components/credible.jsx";
 import HeroProp from "../components/HeroProp.jsx";
-
-
+import Partners from "../components/partners.jsx";
+import Testimonials from "../components/Testimonials.jsx";
+import FeaturedDevelopment from "../components/Fdev.jsx";
+import CTABanner from "../components/HomeCta.jsx";
 function Home() {
 
   return(
     <>
     
       <HeroProp/>
-      <CredYChoose/>
-      <Hcard/>
       <FeaturedProperties/>
-      <Credibile/>
-      <StaffCard/>
+      <FeaturedDevelopment/>
+      <CredYChoose/>
+      <Testimonials/>
+      <CTABanner/>
+      <Partners/>
 
     </>
   );

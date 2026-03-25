@@ -4,7 +4,7 @@
 
 .about-content {
   width: 100%;
-  padding: 60px 0;
+  padding: 25px 0;
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,9 @@
 }
 
 .story-container p {
-  margin-bottom: 22px;
+  margin-bottom: 25px;
+  color: black;
+  font-weight: 250;
 }
 
 /* ============================= */
@@ -80,9 +82,10 @@
 }
 
 .vm-card p {
+  font-weight: 250;
   text-align: justify;
   line-height: 1.9;
-  color: #444;
+  color: black;
 }
 
 /* Subtle hover for modern touch */

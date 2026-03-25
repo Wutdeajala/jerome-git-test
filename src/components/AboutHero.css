@@ -1,77 +1,128 @@
+/* ════════════════════════════════════════════════
+   AboutHero.css
+   ════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Hero shell ── */
 .about-hero {
   position: relative;
-  height: 50vh;
-  width: 100%;
+  /* Full viewport height minus the 80px fixed header */
+  height: calc(50vh - 80px);
+  min-height: 480px;
+  /* Push content down so it starts below the fixed nav */
+  margin-top: 75px;
+  background-position: center center;
   background-size: cover;
-  background-position: center;
-  background-image: url("../assets/images/bimaworld.png");
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s ease;
-  backdrop-filter: blur(2px);
-}
-.about-hero.hero-visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
-/* content container */
+/* ── Layered overlay — dark vignette with a green tint at bottom ── */
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 18, 12, 0.55) 0%,
+      rgba(5, 18, 12, 0.38) 45%,
+      rgba(5, 18, 12, 0.72) 100%
+    );
+  z-index: 1;
+}
 
-.hero-content {
+/* ── Content block ── */
+.about-hero__content {
   position: relative;
   z-index: 2;
-  width: 90%;
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 0 24px;
+  /* Slight upward nudge so it sits in the visual centre of the image */
+  margin-top: -40px;
 }
 
-
-/* lighter glass effect */
-
-.hero-glass {
-  width: 100%;
-  padding: 40px 50px;
-  
+/* ── Eyebrow ── */
+.about-hero__eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  opacity: 0;
+  animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
 }
 
-/* luxury headline */
-
-.hero-glass h1 {
-  font-size: clamp(38px, 5vw, 64px);
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 1.2;
-  margin-bottom: 18px;
-  font-family: "Playfair Display", serif;
-}
-/* subtitle */
-.hero-subtitle {
-  font-size: 20px;
-  line-height: 1.7;
-  margin-bottom: 12px;
-  max-width: 620px;
-}
-/* supporting line */
-.hero-small {
-  font-size: 15px;
-  opacity: 0.85;
-  letter-spacing: 0.5px;
+/* ── Main title ── */
+.about-hero__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0;
+  opacity: 0;
+  animation: hero-rise 1s cubic-bezier(0.22, 1, 0.36, 1) 0.38s forwards;
 }
 
+/* ── Gold rule ── */
+.about-hero__rule {
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  border-radius: 1px;
+  opacity: 0;
+  animation: hero-fade 0.8s ease 0.6s forwards;
+}
 
-/* responsive */
+/* ── Subtitle ── */
+.about-hero__sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.04em;
+  max-width: 440px;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0;
+  animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.72s forwards;
+}
 
+/* ── Animations ── */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes hero-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Responsive ── */
 @media (max-width: 768px) {
-
-  .hero-glass {
-    padding: 30px;
+  .about-hero {
+    height: calc(70vh - 80px);
+    min-height: 420px;
   }
 
-  .hero-subtitle {
-    font-size: 17px;
+  .about-hero__content {
+    margin-top: -20px;
   }
+}
 
+@media (max-width: 480px) {
+  .about-hero {
+    height: calc(65vh - 80px);
+  }
 }

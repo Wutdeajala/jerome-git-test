@@ -1,6 +1,5 @@
 import Story from "../components/Story";
 import SafetyCom from "../components/SafetyCom.jsx";
-import Mission from "../components/Mission.jsx";
 import Vision from "../components/Vision.jsx";
 import Partners from "../components/partners.jsx";
 import StaffCard from "../components/Saffcards.jsx";

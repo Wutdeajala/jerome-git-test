@@ -1,123 +1,143 @@
-/* ============================= */
-/* LUXURY ABOUT STATS SECTION   */
-/* ============================= */
+/* ════════════════════════════════════════════════
+   StatsSection.css
+   ════════════════════════════════════════════════ */
 
-.about-stats {
-  background: white;
-  padding: 15px 8%;
-  position: relative;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Section wrapper ── */
+.stats-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 32px 5% 72px;
   overflow: hidden;
-
 }
 
-/* Subtle top divider */
-.stats-divider {
-  width: 60px;
-  height: 2px;
-  background: #0b2e22; /* very dark luxury green */
-  margin: 0 auto 20px auto;
-  opacity: 0.8;
-}
-
-/* Grid Layout */
-.stats-container {
+/* ── 4-column track ── */
+.stats-section__track {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Individual Stat */
-.stat-card {
-  text-align: center;
+/* ── Individual stat card ── */
+.stat-item {
   position: relative;
-  transition: transform 0.4s ease, opacity 0.8s ease;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards;
+  padding: 0 40px;
+  /* subtle entrance — slides up when section enters view */
+  animation: stat-rise 0.6s ease both;
 }
 
-/* Stagger animation */
-.stat-card:nth-child(1) { animation-delay: 0.2s; }
-.stat-card:nth-child(2) { animation-delay: 0.4s; }
-.stat-card:nth-child(3) { animation-delay: 0.6s; }
-.stat-card:nth-child(4) { animation-delay: 0.8s; }
+/* Vertical divider between items */
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #c9c3b8 30%, #c9c3b8 70%, transparent);
+}
 
-/* Number Styling */
-.stat-value {
-  font-size: clamp(2.8rem, 4vw, 3.5rem);
+.stat-item__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+/* ── Number ── */
+.stat-item__number {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 5vw, 4.2rem);
+  font-weight: 700;
+  color: #0b2e22;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.stat-item__suffix {
+  font-size: 0.6em;
   font-weight: 600;
-  color: #0b2e22; /* luxury dark green */
-  margin-bottom: 18px;
-  letter-spacing: 1px;
+  color:  rgba(255, 255, 255, 0.55);;        /* gold accent on the suffix */
+  letter-spacing: 0;
 }
 
-.stat-value:hover{
-  font-size: clamp(2.8rem, 4vw, 3.8rem);
-  transition: ease-in 0.3s;
-}
-/* Label Styling */
-.stat-label {
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #555;
-  font-weight: 400;
-}
-
-/* Subtle underline accent */
-.stat-underline {
+/* ── Thin gold rule under the number ── */
+.stat-item__divider {
   display: block;
-  width: 0;
+  width: 32px;
   height: 2px;
-  background: #0b2e22;
-  margin: 18px auto 0;
-  transition: width 0.4s ease;
+  background: linear-gradient(to right, #6b6b6b, #6b6b6b);
+  border-radius: 1px;
+  flex-shrink: 0;
 }
 
-/* Hover Effect */
-.stat-card:hover {
-  transform: translateY(-8px);
+/* ── Label ── */
+.stat-item__label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b6b6b;
 }
 
-.stat-card:hover .stat-underline {
-  width: 40px;
-}
-
-/* Fade-in Animation */
-@keyframes fadeUp {
+/* ── Entrance animation ── */
+@keyframes stat-rise {
   from {
-    transform: translateY(40px);
     opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* ============================= */
-/* RESPONSIVE DESIGN            */
-/* ============================= */
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════ */
 
-@media (max-width: 1024px) {
-  .stats-container {
+/* Tablet — 2 × 2 grid */
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 24px 5% 56px;
+  }
+
+  .stats-section__track {
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 40px 0;
+  }
+
+  /* Remove right-edge divider on 2nd and 4th items (end of row) */
+  .stat-item:nth-child(2)::after,
+  .stat-item:nth-child(4)::after {
+    display: none;
+  }
+
+  /* Spacing between rows */
+  .stat-item:nth-child(1),
+  .stat-item:nth-child(2) {
+    padding-bottom: 40px;
   }
 }
 
-@media (max-width: 600px) {
-  .about-stats {
-    padding: 90px 6%;
+/* Mobile — still 2 columns, slightly tighter */
+@media (max-width: 480px) {
+  .stats-section {
+    padding: 20px 4% 48px;
   }
 
-  .stats-container {
-    grid-template-columns: 1fr;
-    gap: 50px;
+  .stat-item {
+    padding: 0 16px;
   }
 
-  .stat-value {
-    font-size: 2.5rem;
+  .stat-item__number {
+    font-size: 2.6rem;
   }
 }

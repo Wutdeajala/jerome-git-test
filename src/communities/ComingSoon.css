@@ -1,0 +1,436 @@
+/* =================================================================
+   ComingSoon.css
+   Matches the FProps.css design system:
+   Fonts  — Cormorant Garamond (headings) + DM Sans (body)
+   Colors — #1a4731 green · #b8962e gold · #f7f6f3 off-white
+   ================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── Variables (mirrors FProps.css) ─────────────────────────────── */
+:root {
+  --cs-green:       #1a4731;
+  --cs-green-light: #43765d;
+  --cs-gold:        #b8962e;
+  --cs-gold-light:  #f5ead6;
+  --cs-white:       #ffffff;
+  --cs-off-white:   #f7f6f3;
+  --cs-text:        #1a1a1a;
+  --cs-text-light:  #6b6b6b;
+  --cs-border:      #e8e4dc;
+  --cs-shadow:      0 8px 40px rgba(0, 0, 0, 0.1);
+  --cs-shadow-lg:   0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Page wrapper ───────────────────────────────────────────────── */
+.cs-page {
+  margin-top: 50px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+  padding: 60px 24px;
+}
+
+/* ── Decorative background ring ─────────────────────────────────── */
+.cs-ring {
+  position: absolute;
+  width: 640px;
+  height: 640px;
+  border-radius: 50%;
+  border: 3.5px solid rgba(46, 184, 83, 0.12);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: ringPulse 6s ease-in-out infinite;
+}
+
+.cs-ring::before,
+.cs-ring::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(184, 150, 46, 0.07);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cs-ring::before {
+  width: 820px;
+  height: 820px;
+}
+
+.cs-ring::after {
+  width: 1000px;
+  height: 1000px;
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 1;   }
+  50%       { transform: translate(-50%, -50%) scale(1.04); opacity: 0.6; }
+}
+
+/* ── Main content block ─────────────────────────────────────────── */
+.cs-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 560px;
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── Eyebrow pill ───────────────────────────────────────────────── */
+.cs-eyebrow {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cs-text);
+  background: #d0d0d0;
+  border: 1px solid rgba(184, 150, 46, 0.25);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.1s;
+}
+
+/* ── Heading ────────────────────────────────────────────────────── */
+.cs-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 600;
+  color: var(--cs-text);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.18s;
+}
+
+/* ── Body copy ──────────────────────────────────────────────────── */
+.cs-body {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--cs-text-light);
+  line-height: 1.7;
+  margin: 0 0 40px;
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.26s;
+}
+
+/* ── Action buttons row ─────────────────────────────────────────── */
+.cs-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.34s;
+}
+
+/* ── Button base ────────────────────────────────────────────────── */
+.cs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  white-space: nowrap;
+}
+
+/* Primary — solid green */
+.cs-btn--primary {
+  background: var(--cs-green);
+  color: var(--cs-white);
+}
+
+.cs-btn--primary:hover {
+  background: var(--cs-green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 71, 49, 0.25);
+}
+
+.cs-btn--primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Ghost — outlined */
+.cs-btn--ghost {
+  background: transparent;
+  color: var(--cs-green);
+  border: 1.5px solid var(--cs-border);
+}
+
+.cs-btn--ghost:hover {
+  border-color: var(--cs-green);
+  background: rgba(26, 71, 49, 0.04);
+}
+
+/* Full width variant */
+.cs-btn--full {
+  width: 100%;
+  margin-top: 6px;
+}
+
+/* ── Modal overlay ──────────────────────────────────────────────── */
+.cs-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 18, 14, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  animation: fadeIn 0.25s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Modal panel ────────────────────────────────────────────────── */
+.cs-modal {
+  background: var(--cs-white);
+  border-radius: 16px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--cs-shadow-lg);
+  position: relative;
+  animation: modalUp 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes modalUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* ── Close button ───────────────────────────────────────────────── */
+.cs-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--cs-off-white);
+  color: var(--cs-text-light);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.cs-modal__close:hover {
+  background: var(--cs-border);
+  color: var(--cs-text);
+}
+
+/* ── Modal header text ──────────────────────────────────────────── */
+.cs-modal__eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  margin: 0 0 8px;
+}
+
+.cs-modal__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--cs-text);
+  line-height: 1.1;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.cs-modal__sub {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--cs-text);
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
+
+/* ── Form ───────────────────────────────────────────────────────── */
+.cs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Two-column row for name + email */
+.cs-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.cs-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs-form__field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cs-text);
+  letter-spacing: 0.01em;
+}
+
+.cs-form__field input,
+.cs-form__field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--cs-border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--cs-text);
+  background: var(--cs-off-white);
+  outline: none;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+  resize: vertical;
+}
+
+.cs-form__field input::placeholder,
+.cs-form__field textarea::placeholder {
+  color: #b0aba3;
+}
+
+.cs-form__field input:focus,
+.cs-form__field textarea:focus {
+  border-color: var(--cs-green);
+  box-shadow: 0 0 0 3px rgba(26, 71, 49, 0.08);
+  background: var(--cs-white);
+}
+
+/* ── Error message ──────────────────────────────────────────────── */
+.cs-form__error {
+  font-size: 0.82rem;
+  color: #c0392b;
+  background: #fdf2f0;
+  border: 1px solid #f5c6bc;
+  border-radius: 7px;
+  padding: 10px 14px;
+  margin: 0;
+}
+
+/* ── Success state ──────────────────────────────────────────────── */
+.cs-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 0 8px;
+  gap: 12px;
+  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.cs-success__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #e8f5ee;
+  color: var(--cs-green);
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  border: 1.5px solid rgba(26, 71, 49, 0.15);
+}
+
+.cs-success__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--cs-text);
+  margin: 0;
+}
+
+.cs-success__body {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--cs-text-light);
+  line-height: 1.65;
+  max-width: 360px;
+  margin: 0 0 8px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .cs-modal {
+    padding: 36px 24px;
+  }
+
+  .cs-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-title {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
+  }
+
+  .cs-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cs-btn {
+    width: 100%;
+  }
+}
+
+/* ── Reduced motion ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .cs-content,
+  .cs-eyebrow,
+  .cs-title,
+  .cs-body,
+  .cs-actions,
+  .cs-overlay,
+  .cs-modal,
+  .cs-success,
+  .cs-ring {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
