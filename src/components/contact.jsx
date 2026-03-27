@@ -11,8 +11,8 @@ const contactDetails = [
   {
     Icon: Phone,
     label: "Phone",
-    value: "+234 000 000 0000",
-    href: "tel:+2340000000000",
+    value: "+234 8165521046",
+    href: "tel:+2348165521046",
   },
   {
     Icon: Mail,
@@ -23,8 +23,8 @@ const contactDetails = [
   {
     Icon: MapPin,
     label: "Office Address",
-    value: "No 3, Ankuru Close, Off Rima Street, Off Gurara Street, Maitama, Abuja FCT",
-    href: "https://www.google.com/maps/search/Ankuru+Close+Maitama+Abuja",
+    value: "1b Oguta Lake St, Maitama, Abuja, FCT",
+    href: "https://maps.app.goo.gl/HS8KbvBff7GHQV2e7",
   },
   {
     Icon: Clock,
@@ -90,7 +90,7 @@ const handleChange = useCallback((field) => (e) => {
     };
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://jerome-bima-backend.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -139,6 +139,7 @@ const handleChange = useCallback((field) => (e) => {
                   <label htmlFor="ct-name">Full Name <span>*</span></label>
                   <input
                     id="ct-name"
+                    name= "name"
                     type="text"
                     placeholder="e.g. Amina Bello"
                     value={form.name}
@@ -155,6 +156,7 @@ const handleChange = useCallback((field) => (e) => {
                     <label htmlFor="ct-email">Email Address <span>*</span></label>
                     <input
                       id="ct-email"
+                      name= "email"
                       type="email"
                       placeholder="e.g. amina@example.com"
                       value={form.email}
@@ -171,6 +173,7 @@ const handleChange = useCallback((field) => (e) => {
                     </label>
                     <input
                       id="ct-phone"
+                      name= "phone"
                       type="tel"
                       placeholder="e.g. +234 800 000 0000"
                       value={form.phone}
@@ -187,6 +190,7 @@ const handleChange = useCallback((field) => (e) => {
                   <label htmlFor="ct-subject">Subject <span>*</span></label>
                   <input
                     id="ct-subject"
+                    name= "subject"
                     type="text"
                     placeholder="e.g. Enquiry about Park Villa"
                     value={form.subject}
@@ -201,6 +205,7 @@ const handleChange = useCallback((field) => (e) => {
                   <label htmlFor="ct-message">Message <span>*</span></label>
                   <textarea
                     id="ct-message"
+                    name= "message"
                     placeholder="Tell us how we can help…"
                     value={form.message}
                     onChange={handleChange("message")}
@@ -259,7 +264,7 @@ const handleChange = useCallback((field) => (e) => {
               <div className="ct-map">
                 <iframe
                   title="Bima Shelter Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8!2d7.4985!3d9.0871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b9e8e8e8e8f%3A0x1234567890abcdef!2sMaitama%2C%20Abuja%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1700000000000"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.5967828321336!2d7.499158875066733!3d9.100446090963738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a6d6a0ac49f%3A0x8e46fe3409a9d140!2s1%20Oguta%20Lake%20St%2C%20Maitama%2C%20Abuja%20904101%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1774610473371!5m2!1sen!2sng" 
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

@@ -21,13 +21,13 @@ const quickLinks = [
 const contactItems = [
   {
     Icon: MapPin,
-    text: "No 3, Ankuru Close, Off Gurara Street, Maitama, Abuja FCT",
-    href: "https://www.google.com/maps/search/Ankuru+Close+Maitama+Abuja",
+    text: "1b Oguta Lake St, Maitama, Abuja, FCT",
+    href: "https://maps.app.goo.gl/HS8KbvBff7GHQV2e7",
   },
   {
     Icon: Phone,
-    text: "+234 000 000 0000",
-    href: "tel:+2340000000000",
+    text: "+234 816 552 1046",
+    href: "tel:+2348165521046",
   },
   {
     Icon: Mail,
@@ -58,7 +58,7 @@ const Footer = () => {
     setStatus("loading");
 
     try {
-      const res = await fetch("/api/subscribe", {
+      const res = await fetch("https://jerome-bima-backend.onrender.com", {
         method:  "POST",
         headers: { "Content-Type": "application/json" },
         body:    JSON.stringify({ email: email.trim().toLowerCase().slice(0, 254) }),
@@ -168,6 +168,7 @@ const Footer = () => {
             <form className="lf-newsletter__form" onSubmit={handleSubscribe} noValidate>
               <div className={`lf-newsletter__field${errMsg ? " lf-newsletter__field--err" : ""}`}>
                 <input
+                  name= "email"
                   type="email"
                   placeholder="Your email address"
                   value={email}
