@@ -22,15 +22,16 @@ const residences = [
     ],
   },
   {
-    title: "4 Bedroom Semi-Detached Duplex",
+    title: "3 Bedroom Apartments",
     image: img2,
     features: [
       "All rooms ensuite",
+      "Living room + dining",
       "Shared wall design",
     ],
   },
   {
-    title: "2 Bedroom Serviced Apartment",
+    title: "2 Bedroom Apartment",
     image: img5,
     features: [
       "2/3 bedrooms, 2 bathrooms",
@@ -44,7 +45,6 @@ const amenities = [
   { Icon: ShieldCheck, label: "Security",       desc: "24/7 controlled entry with manned gates and CCTV" },
   { Icon: Zap,         label: "Reliable Power",        desc: "Backup generator ensuring uninterrupted electricity" },
   { Icon: Lightbulb,   label: "Street Lighting",          desc: "Consistent water supply for all residents" },
-  { Icon: Trees,       label: "Children's Playground", desc: "Safe, dedicated play areas within green grounds" },
   { Icon: Route,      label: "Good Road Networking",        desc: "A mosque conveniently located within the estate" },
   { Icon: ShoppingBag, label: "Shopping facilities",             desc: "Nearby shopping facilities, for everyday essentials" },
 ];
@@ -112,7 +112,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
     };
 
     try {
-      const res = await fetch("/api/register-interest", {
+      const res = await fetch("https://jerome-bima-backend.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -141,20 +141,20 @@ const InterestModal = ({ onClose, onSuccess }) => {
         <form className="ri-form" onSubmit={handleSubmit} noValidate>
           <div className={`ri-field${errors.name ? " ri-field--error" : ""}`}>
             <label htmlFor="ri-name">Full Name <span aria-hidden="true">*</span></label>
-            <input ref={firstFieldRef} id="ri-name" type="text" placeholder="e.g. Amina Ibrahim"
+            <input ref={firstFieldRef} id="ri-name" name= "name" type="text" placeholder="e.g. Amina Ibrahim"
               value={form.name} onChange={handleChange("name")} maxLength={80} required />
             {errors.name && <span className="ri-field__error" role="alert">{errors.name}</span>}
           </div>
           <div className={`ri-field${errors.email ? " ri-field--error" : ""}`}>
             <label htmlFor="ri-email">Email Address <span aria-hidden="true">*</span></label>
-            <input id="ri-email" type="email" placeholder="e.g. amina@example.com"
+            <input id="ri-email" name= "email" type="email" placeholder="e.g. amina@example.com"
               value={form.email} onChange={handleChange("email")} maxLength={254} required />
             {errors.email && <span className="ri-field__error" role="alert">{errors.email}</span>}
           </div>
           <div className={`ri-field${errors.property ? " ri-field--error" : ""}`}>
             <label htmlFor="ri-property">Property of Interest <span aria-hidden="true">*</span></label>
             <div className="ri-select-wrap">
-              <select id="ri-property" value={form.property} onChange={handleChange("property")} required>
+              <select id="ri-property" name= "property" value={form.property} onChange={handleChange("property")} required>
                 <option value="" disabled>Select a property…</option>
                 {PROPERTIES.map((p) => <option key={p} value={p}>{p}</option>)}
               </select>
@@ -163,7 +163,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
           </div>
           <div className="ri-field">
             <label htmlFor="ri-message">Message <span className="ri-field__optional">(optional)</span></label>
-            <textarea id="ri-message" placeholder="Any questions, preferred unit type, budget range…"
+            <textarea id="ri-message" name= "message" placeholder="Any questions, preferred unit type, budget range…"
               value={form.message} onChange={handleChange("message")} rows={4} maxLength={1000} />
             <span className="ri-field__count">{form.message.length} / 1000</span>
           </div>

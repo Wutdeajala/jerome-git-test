@@ -4,81 +4,72 @@ import { ArrowRight } from "lucide-react";
 import './FProps.css';
 
 import property1 from '../assets/images/proper/parkvillaI1.jpg';
-import property2 from '../assets/images/proper/541R3.jpg';
-import property8 from '../assets/images/proper/541R6.jpg';
+import property2 from '../assets/images/proper/541R6.jpg';
+import property8 from '../assets/images/proper/UMcourt6.jpg';
 import property3 from "../assets/images/proper/HBcourt1.jpg";
 import property5 from "../assets/images/proper/ECestate2.jpg";
 import property7 from "../assets/images/proper/Sa'ada4.jpg";
 // ─── Only Maitama & Wuye properties ───────────────────────────────────────────
 const properties = [
   {
+    
     id: 1,
-    title: 'Habbiba court',
-    image: property3,
-    type: 'townhouse',
-    route: '/coming-soon',
-    subtitle: 'Karimo, Abuja',
-    availability: '40 units of various house types',
-    address: 'Plot 541 John Chukwu Crescent, Off Dahiru Musdafa Blvd, Karimo, Abuja',
-    mapUrl: 'https://www.google.com/maps/search/Plot+541+John+Chukwu+Crescent+Wuye+Abuja/@9.0653,7.4836,17z',
-    badge: 'FEATURED',
-  },
-  {
-    id: 2,
-    title: 'Park Villa',
+    title: 'Park Villa II',
     route: '/pvmabs',
     subtitle: 'Maitama, Abuja',
     availability: '6 units of 7-bedroom Luxurious villa',
-    address: '3 Sankuru Close, Maitama, Abuja FCT',
-    mapUrl:
-      'https://www.google.com/maps/search/3+Sankuru+Close+Maitama+Abuja/@9.086,7.4995,17z',
+    address: 'Off Usuma Close, Maitama Amusement Park, Maitama, Abuja',
     bedrooms: 7,
     bathrooms: 8,
     image: property1,
     badge: 'FEATURED',
   },
   {
-    id: 3,
-    title: '541 Residence',
-    route: '/res541',
-    subtitle: 'Wuye, Abuja',
-    availability: '17 units of terraces as Airbnb',
-    address: 'Plot 541 John Chukwu Crescent, Off Dahiru Musdafa Blvd, Wuye, Abuja',
-    mapUrl:
-      'https://www.google.com/maps/search/Plot+541+John+Chukwu+Crescent+Wuye+Abuja/@9.0653,7.4836,17z',
-    bedrooms: 3,
-    bathrooms: 4,
-    image: property8,
-    badge: 'FEATURED',
-  },
-  {
-    id: 4,
-    title: '541 Residence',
-    route: '/res541',
-    subtitle: 'Wuye, Abuja',
-    availability: '17 units of terraces as Airbnb',
-    address: 'Plot 541 John Chukwu Crescent, Off Dahiru Musdafa Blvd, Wuye, Abuja',
-    mapUrl:
-      'https://www.google.com/maps/search/Plot+541+John+Chukwu+Crescent+Wuye+Abuja/@9.0653,7.4836,17z',
-    bedrooms: 2,
-    bathrooms: 3,
-    image: property2,
-    badge: 'FEATURED',
-  },
-  {
-    id: 5,
+    id: 2,
     title: 'Enclave Estate',
     image: property5,
     route: '/enclv',
     subtitle: 'Asokoro, Abuja',
-    availability: '17 units of terraces as Airbnb',
-    address: 'Plot 541 John Chukwu Crescent, Off Dahiru Musdafa Blvd, Wuye, Abuja',
-    mapUrl:
-      'https://www.google.com/maps/search/Plot+541+John+Chukwu+Crescent+Wuye+Abuja/@9.0653,7.4836,17z',
-    bedrooms: 3,
-    bathrooms: 4,
+    availability: '42 units of 7 bedroom fully detached Villas',
+    address: 'plot 417 cadastral zone A04, Asokoro district, Abuja-FCT',
+    bedrooms: 7,
+    bathrooms: 8,
     badge: 'FEATURED',
   },
+  {
+    id: 3,
+    title: 'Residence 541',
+    route: '/res541',
+    subtitle: 'Wuye, Abuja',
+    availability: '17 units of terraces as Airbnb',
+    address: 'Plot 541 John Chukwu Crescent, Off Dahiru Musdafa Blvd, Wuye, Abuja',
+    bedrooms: 3,
+    bathrooms: 4,
+    image: property2,
+    badge: 'FEATURED',
+  },
+  {
+    id: 4,
+    title: 'Habiba court',
+    image: property3,
+    type: 'townhouse',
+    route: '/coming-soon',
+    subtitle: 'Karimo, Abuja',
+    availability: '40 units of various house types',
+    address: 'Cadastral Zone, Life Camp, Abuja 900108',
+    badge: 'FEATURED',
+  },
+  {
+    id: 5,
+    title: 'Ummahani Court',
+    image: property8,
+    type: 'townhouse',
+    route: '/umhc',
+    subtitle: 'Galadimawa, Abuja',
+    availability: '200 units of various house types',
+    address: 'Plot 21, Cadastral zone C17, Galadimawa, Abuja',
+    badge: 'FEATURED',
+  },  
   {
     id: 6,
     title: 'Sa ada Court',
@@ -86,11 +77,7 @@ const properties = [
      route: '/saadacrt',
      subtitle: 'Apo, Abuja',
      availability: '100 units of various house types',
-     address: 'Plot 960, Cadestral Zone B19, Apo-Dutse, Apo District, Abuja',
-     mapUrl:
-       'https://maps.app.goo.gl/E8nG3dZ8JsdMxmoz6',
-     bedrooms: 3,
-     bathrooms: 4,
+     address: 'Plot 960, Cadastral Zone B19, Apo-Dutse, Apo District, Abuja',
      badge: 'FEATURED',
   },
 

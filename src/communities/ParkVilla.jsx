@@ -16,17 +16,15 @@ import img8 from "../assets/images/proper/parkvillaI3.jpg";
 /* ─── DATA ─── */
 
 const amenities = [
-  { Icon: Trees,         label: "Children's Playground", desc: "Dedicated play areas within landscaped grounds" },
   { Icon: ShieldCheck,   label: "24/7 Security",          desc: "Manned gates, CCTV and perimeter patrols" },
   { Icon: Footprints,    label: "Walking Paths",           desc: "Scenic paved walkways throughout the estate" },
-  { Icon: Zap,           label: "Backup Power",            desc: "Uninterrupted power supply for every unit" },
   { Icon: ParkingCircle, label: "Ample Parking",           desc: "Dedicated bays plus visitor parking" },
   { Icon: Fence,         label: "Fenced & Private",        desc: "Each villa sits within its own gated compound" },
 ];
 
 const PROPERTIES = [
-  "Park Villa — Maitama, Abuja",
-  "Park Villas II — Maitama, Abuja",
+  "Park Villa II — Maitama, Abuja",
+  "Park Villas III — Maitama, Abuja",
   "541 Residence — Wuye, Abuja",
   "Enclave Estate — Asokoro, Abuja",
   "Saada Court — Apo Resettlement, Abuja",
@@ -88,7 +86,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
       message:  sanitiseMessage(form.message),
     };
     try {
-      const res = await fetch("/api/register-interest", {
+      const res = await fetch("https://jerome-bima-backend.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -123,7 +121,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
           <div className={`ri-field${errors.name ? " ri-field--error" : ""}`}>
             <label htmlFor="ri-name">Full Name <span aria-hidden="true">*</span></label>
             <input
-              id="ri-name" ref={firstFieldRef} type="text"
+              id="ri-name" name= "name" ref={firstFieldRef} type="text"
               placeholder="e.g. Amina Bello" value={form.name}
               onChange={handleChange("name")} autoComplete="name" maxLength={80} required
             />
@@ -133,7 +131,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
           <div className={`ri-field${errors.email ? " ri-field--error" : ""}`}>
             <label htmlFor="ri-email">Email Address <span aria-hidden="true">*</span></label>
             <input
-              id="ri-email" type="email" placeholder="e.g. amina@example.com"
+              id="ri-email" name= "email" type="email" placeholder="e.g. amina@example.com"
               value={form.email} onChange={handleChange("email")}
               autoComplete="email" maxLength={254} required
             />
@@ -143,7 +141,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
           <div className={`ri-field${errors.property ? " ri-field--error" : ""}`}>
             <label htmlFor="ri-property">Property of Interest <span aria-hidden="true">*</span></label>
             <div className="ri-select-wrap">
-              <select id="ri-property" value={form.property} onChange={handleChange("property")} required>
+              <select id="ri-property" name= "property" value={form.property} onChange={handleChange("property")} required>
                 <option value="" disabled>Select a property…</option>
                 {PROPERTIES.map((p) => <option key={p} value={p}>{p}</option>)}
               </select>
@@ -157,6 +155,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
             </label>
             <textarea
               id="ri-message"
+              name= "message"
               placeholder="Preferred unit size, dates, any questions…"
               value={form.message} onChange={handleChange("message")} rows={4} maxLength={1000}
             />
@@ -370,7 +369,7 @@ const ParkVilla = () => {
         <div className="pv-hero__overlay" />
         <div className="pv-hero__content">
           <p className="pv-hero__eyebrow">Maitama · Abuja</p>
-          <h1 className="pv-hero__title">Park Villa</h1>
+          <h1 className="pv-hero__title">Park Villa II</h1>
           <p className="pv-hero__tagline">Luxurious Villas</p>
         </div>
         <div className="pv-scroll-indicator"><span /></div>
@@ -381,7 +380,7 @@ const ParkVilla = () => {
         <div className="pv-overview__badge">Overview</div>
         <h2 className="pv-overview__heading">A Residence Beyond Compare</h2>
         <p className="pv-overview__body">
-          Park Villa is an exclusive collection of six meticulously crafted 7-bedroom
+          Park Villa II is an exclusive collection of six meticulously crafted 7-bedroom
           detached villas nestled in the heart of Maitama — Abuja's most prestigious
           address. Set between the IBB International Golf &amp; Country Club and the
           Maitama Amusement Park, each villa is a masterclass in architectural refinement,
@@ -418,7 +417,7 @@ const ParkVilla = () => {
       <section className="pv-gallery container fade-in">
         <div className="pv-section-header">
           <div className="pv-overview__badge">Gallery</div>
-          <h2>Inside Park Villa</h2>
+          <h2>Inside Park Villa II</h2>
         </div>
 
         {/*
@@ -489,7 +488,7 @@ const ParkVilla = () => {
       {/* ── STICKY BAR ── */}
       {showSticky && (
         <div className="pv-sticky-cta">
-          <span className="pv-sticky-cta__name">Park Villa</span>
+          <span className="pv-sticky-cta__name">Park Villa II </span>
           <button className="pv-sticky-cta__btn" onClick={openModal}>
             Register Interest
           </button>

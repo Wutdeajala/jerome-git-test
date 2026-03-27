@@ -121,7 +121,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
     };
 
     try {
-      const res = await fetch("/api/register-interest", {
+      const res = await fetch("https://jerome-bima-backend.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -159,7 +159,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
           <div className={`ri-field${errors.name ? " ri-field--error" : ""}`}>
             <label htmlFor="ri-name">Full Name <span aria-hidden="true">*</span></label>
             <input
-              id="ri-name" ref={firstFieldRef} type="text"
+              id="ri-name" name= "name" ref={firstFieldRef} type="text"
               placeholder="e.g. Amina Bello" value={form.name}
               onChange={handleChange("name")} autoComplete="name" maxLength={80} required
             />
@@ -169,7 +169,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
           <div className={`ri-field${errors.email ? " ri-field--error" : ""}`}>
             <label htmlFor="ri-email">Email Address <span aria-hidden="true">*</span></label>
             <input
-              id="ri-email" type="email" placeholder="e.g. amina@example.com"
+              id="ri-email" name= "email" type="email" placeholder="e.g. amina@example.com"
               value={form.email} onChange={handleChange("email")}
               autoComplete="email" maxLength={254} required
             />
@@ -179,7 +179,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
           <div className={`ri-field${errors.property ? " ri-field--error" : ""}`}>
             <label htmlFor="ri-property">Property of Interest <span aria-hidden="true">*</span></label>
             <div className="ri-select-wrap">
-              <select id="ri-property" value={form.property} onChange={handleChange("property")} required>
+              <select id="ri-property" name= "property" value={form.property} onChange={handleChange("property")} required>
                 <option value="" disabled>Select a property…</option>
                 {PROPERTIES.map((p) => <option key={p} value={p}>{p}</option>)}
               </select>
@@ -192,7 +192,7 @@ const InterestModal = ({ onClose, onSuccess }) => {
               Message <span className="ri-field__optional">(optional)</span>
             </label>
             <textarea
-              id="ri-message" placeholder="Preferred unit size, dates, any questions…"
+              id="ri-message" name= "message" placeholder="Preferred unit size, dates, any questions…"
               value={form.message} onChange={handleChange("message")} rows={4} maxLength={1000}
             />
             <span className="ri-field__count">{form.message.length} / 1000</span>
@@ -405,7 +405,7 @@ const Residence541 = () => {
         <div className="pv-hero__overlay" />
         <div className="pv-hero__content fade-in">
           <p className="pv-hero__eyebrow">Wuye · Abuja</p>
-          <h1 className="pv-hero__title">541 Residence</h1>
+          <h1 className="pv-hero__title">Residence 541</h1>
           <p className="pv-hero__tagline">16 Units of Premium Serviced Apartments</p>
         </div>
         <div className="pv-scroll-indicator"><span /></div>
@@ -548,7 +548,7 @@ const Residence541 = () => {
       {/* ── DYNAMIC ISLAND STICKY BAR ── */}
       {showSticky && (
         <div className="pv-sticky-cta">
-          <span className="pv-sticky-cta__name">541 Residence</span>
+          <span className="pv-sticky-cta__name">Residence 541</span>
           <button className="pv-sticky-cta__btn" onClick={openModal}>
             Register Interest
           </button>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, BedDouble, ArrowRight, Shield, Trees, Zap } from "lucide-react";
+import { MapPin, BedDouble, ArrowRight, Shield, Trees, Zap, Fence } from "lucide-react";
 import "./Fdev.css";
 import spotlightImg from "../assets/images/proper/parkvillaMA/pvma3.jpg";
 
@@ -8,7 +8,7 @@ const highlights = [
   { Icon: BedDouble, label: "7-Bedroom Villas",     desc: "Expansive private residences" },
   { Icon: Shield,    label: "24/7 Gated Security",  desc: "Manned entrance & CCTV"       },
   { Icon: Trees,     label: "Landscaped Grounds",   desc: "Private gardens & walkways"   },
-  { Icon: Zap,       label: "Backup Power",         desc: "Uninterrupted power supply"   },
+  { Icon: Fence,     label: "Fenced & Private",     desc: "Each villa sits within its own gated compound" },
 ];
 
 const FeaturedDevelopment = () => {
@@ -54,7 +54,7 @@ const FeaturedDevelopment = () => {
             <span>Featured Development</span>
           </div>
 
-          <h2 className="fd-title">Park Villa</h2>
+          <h2 className="fd-title">Park Villa II</h2>
 
           <div className="fd-location">
             <MapPin size={14} strokeWidth={2} className="fd-location__icon" />
@@ -86,7 +86,7 @@ const FeaturedDevelopment = () => {
 
           {/* CTA */}
           <Link to="/pvmabs" className="fd-cta">
-            <span>Explore Park Villa</span>
+            <span>Explore Park Villa II</span>
             <ArrowRight size={16} className="fd-cta__arrow" />
           </Link>
 
