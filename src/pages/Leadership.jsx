@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import chairman from '../assets/images/director/Alhaji sambo.png';
 import director1 from '../assets/images/director/SMA.png';
-import director2 from '../assets/images/director/Hajiya Garba.jpg';
+import director2 from '../assets/images/director/Hajiya Garba.png';
 import director3 from '../assets/images/director/Babatunde.png';
+import director4 from '../assets/images/director/Gwarzo.png';
+import director5 from '../assets/images/director/MKAhmadbg.png';
+
 import '../components/leadership.css';
 import bg2 from "../assets/images/bimaworld.png";
 
@@ -38,7 +41,7 @@ const directors = [
       "In addition to her achievements in the hospitality industry, she holds key leadership positions in other thriving enterprises. She serves as a Director at Bima Mines Ltd. and Chemcraft Nigeria Ltd., companies actively engaged in mining and industrial services. Her involvement at the executive level reflects her deep understanding of business operations, strategic planning, and cross-sectoral management.",
       "With a broad portfolio, she brings a wealth of hands-on experience and business acumen."
     ]
-  },/*
+  },
   {
     id: 4,
     name: "Mr. Babatunde Richards Olomolehin",
@@ -51,20 +54,27 @@ const directors = [
       "His dual expertise as both developer and operator offers him a deep understanding of market dynamics, enabling him to deliver projects that are not only structurally and financially sound but also thoughtfully designed for optimal user experience."
     ]
   },
-  
+  {
     id: 5,
-    name: "Director Name",
-    title: "Development Director",
-    image: "",
-    bio: "Biography goes here."
+    name: "Mounir Haliru Gwarzo",
+    title: "Director",
+    image: director4,
+    bio: [ "With over three decades of experience, Mounir Haliru Gwarzo is a distinguished leader in Nigeria’s financial and capital market sector. He holds a degree in Economics from Bayero University Kano, with further studies in Development Finance and an MBA in Management and Leadership from UK institutions.",
+      "Mounir has held key roles across major financial institutions and served as Director-General of the Securities and Exchange Commission (2015–2020), where he led transformative reforms that enhanced market transparency, investor confidence, and regulatory efficiency.",
+      "He is a Fellow of the Chartered Institute of Stockbrokers and an alumnus of globally renowned institutions including INSEAD and Saïd Business School, University of Oxford. His career reflects a strong commitment to corporate governance, institutional development, and sustainable financial growth.",
+    ]
   },
   {
     id: 6,
-    name: "Director Name",
-    title: "Strategy Director",
-    image: "",
-    bio: "Biography goes here."
-  */
+    name: "Muhammad Kabiru Ahmad, OON",
+    title: "Director",
+    image: director5,
+    bio: [ "With over four decades of distinguished experience, Muhammad Kabiru Ahmad is a respected leader in Nigeria’s financial services and public sector landscape. He is best known as the pioneer Chief Executive Officer of the National Pension Commission (PenCom), where he led the establishment and growth of Nigeria’s pension industry into a multi-trillion-naira sector.",
+      "Ahmad has held several high-level roles across regulatory and financial institutions, including serving as a Bank Supervisor at the Nigeria Deposit Insurance Corporation and as an IMF-appointed Bank Supervisor at the Central Bank of Liberia. He also served as a Departmental Director and Board member of the Federal Inland Revenue Service, contributing significantly to public financial administration and policy.",
+      "He currently serves as Chairman and board member across multiple leading organizations, including Credent Capital & Advisory Ltd, UltraMed Hospital, MTN Nigeria Plc, and Flour Mills of Nigeria Plc. His governance expertise extends to national assignments, where he chaired the committee that produced the Nigerian Code of Corporate Governance (2018) and continues to contribute to policy and development initiatives across both federal and subnational levels.",
+      "Ahmad is widely recognized for his commitment to transparency, institutional development, and the promotion of strong corporate governance practices, consistently driving initiatives that support sustainable economic growth and nation-building.",
+    ]
+  },  
 ];
 
 function Leadership() {

@@ -160,18 +160,6 @@ const properties = [
   },  
   {
     id: 10,
-    title: 'Park Springs III',
-    image: property8,
-    type: 'villa',
-    route: '/coming-soon',
-    subtitle: 'Maitama, Abuja',
-    availability: '8 & 6 bedroom fully detached villas currently under construction',
-    bedrooms: 7,
-    bathrooms: 8,
-    badge: 'FEATURED',
-  },
-  {
-    id: 11,
     title:'Lake Chad',
     image: property7,
     type: 'terrace',
