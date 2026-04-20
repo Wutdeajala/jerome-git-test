@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import hrH from "../assets/images/team/staff/Tosin.jpg";
-import operationsH from "../assets/images/team/staff/Nura.jpg";
-import architectH from "../assets/images/team/staff/ibusi.jpg";
+import hrH from "../assets/images/team/staff/Tosin.png";
+import operationsH from "../assets/images/team/staff/Nura.png";
 import coo from "../assets/images/team/staff/joshua.jpg";
-import financeH from "../assets/images/team/staff/Saadu.jpg";
 import '../components/leadership.css';
 import bg2 from "../assets/images/bimaworld.png";
 const directors = [
@@ -25,41 +23,16 @@ const directors = [
     bio:["QS. Sani Nura Bello serves as the Head of Operations and Lead Quantity Surveyor at the company. He holds a Bachelor of Technology (B.Tech, Hons) degree in Quantity Surveying from the Federal University of Technology, Minna. In his role, Nura is responsible for overseeing all contractual aspects of construction projects.",
       "He manages project costs, ensuring that each project is delivered within budget and on schedule.",
       ] 
-  },/*
+  },
   {
     id: 3,
-    name: "Architect Ibisu Ikpesu Ephraim",
-    title: "Head, Architectural Team",
-    image: architectH,
-    bio: [ "Architect Ibisu Ikpesu Ephraim brings over nine years of experience in architectural design, project planning, and construction supervision",
-      "He specializes in CAD-based 3D visualizations and has successfully delivered detailed designs for residential developments including blocks of flats, terraces, and duplexes. His portfolio also includes the remodeling, restoration, and renovation of various buildings.",
-    ]
-  }*/
-  {
-    id: 4,
     name: "Dr. Joshua Olorunkiya",
     title: "Chief Operating Officer",
     image: coo,
     bio: [ "Dr. Joshua is a seasoned Quantity Surveyor and Project Manager with over 15 years of experience across the construction industry in Nigeria and abroad.",
       "He holds a PhD in Civil Engineering (Construction Project Management) from the University of Auckland, New Zealand, and a Master’s in Construction Contract Management (Distinction) from the University of Technology Malaysia. He also earned a B.Sc."
     ]
-  },/*
-  {
-    id: 5,
-    name: "Saadu Kamaldeen Adebayo",
-    title: "Finance Manager",
-    image: financeH,
-    bio: ["Saadu Kamaldeen Adebayo is a Chartered Accountant and Certified Procurement Professional with over 10 years of experience in finance, treasury, budget management, and procurement, with a strong focus on the public sector.",
-      "Currently, he serves as the Finance Manager at Bima Shelter Limited, where he leads initiatives in budget planning, vendor management, internal controls, and process optimization."
-    ]
-  },/*
-  {
-    id: 6,
-    name: "Director Name",
-    title: "Strategy Director",
-    image: "",
-    bio: "Biography goes here."
-  }*/
+  },
 ];
 
 function Team() {
@@ -115,7 +88,7 @@ function Team() {
         <div className="hero-divider"></div>
       </div>
 
-      <div className="scroll-indicator">
+      <div>
         <span></span>
       </div>
     </section>

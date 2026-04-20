@@ -530,7 +530,7 @@
 .pv-cta__btn:hover {
   background: var(--pv-green-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgb(184, 150, 46);
+  box-shadow: 0 8px 24px rgb(255, 255, 255);
 }
 
 /* ════════════════════════════════════════════════
