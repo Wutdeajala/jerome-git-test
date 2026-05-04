@@ -14,7 +14,6 @@ function Home() {
       <FeaturedProperties/>
       <FeaturedDevelopment/>
       <CredYChoose/>
-      <Testimonials/>
       <CTABanner/>
       <Partners/>
 

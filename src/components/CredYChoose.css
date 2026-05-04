@@ -222,7 +222,7 @@
    STATS BAND
    ════════════════════════════════════════════════ */
 .cy-stats {
-  background: var(--cy-dark);
+  background: var(--cy-bg);
   padding: 64px 5%;
   position: relative;
   overflow: hidden;
@@ -243,7 +243,7 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
@@ -251,7 +251,6 @@
 .cy-stat {
   text-align: center;
   padding: 20px;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s var(--cy-ease), transform 0.7s var(--cy-ease);
@@ -268,16 +267,16 @@
 
 .cy-stat__num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 4vw, 3.8rem);
+  font-size: clamp(3.3rem, 4.5vw, 4.0rem);
   font-weight: 700;
-  color: #ffffff;
+  color: #0b2e22;
   line-height: 1;
   margin-bottom: 10px;
   letter-spacing: -0.02em;
 }
 
 .cy-stat__suffix {
-  color: var(--cy-bg);
+  color: var(--cy-dark);
   font-size: 0.65em;
   vertical-align: super;
   margin-left: 2px;
@@ -289,7 +288,7 @@
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: #0b2e22;
 }
 
 /* ════════════════════════════════════════════════
@@ -312,7 +311,7 @@
   }
 
   .cy-stats__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 0;
   }
 
@@ -341,6 +340,6 @@
   }
 
   .cy-stats__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }

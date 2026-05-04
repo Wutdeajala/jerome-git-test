@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=DM+Sans:wght@400;500&display=swap');
+
+.cookie-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: calc(100% - 48px);
+  max-width: 720px;
+  animation: cookie-slide-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.cookie-banner--leaving {
+  animation: cookie-slide-down 0.35s cubic-bezier(0.55, 0, 1, 0.45) both;
+}
+
+@keyframes cookie-slide-up {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes cookie-slide-down {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(16px);
+  }
+}
+
+.cookie-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #1c2b22;
+  border: 1px solid #2e4236;
+  border-radius: 4px;
+  padding: 18px 20px 18px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+}
+
+.cookie-banner__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.cookie-banner__heading {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #fafafa;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.cookie-banner__body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #a8bfae;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.cookie-banner__link {
+  color: #c9a84c;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+  transition: border-color 0.2s;
+}
+
+.cookie-banner__link:hover {
+  border-color: #fafafa;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cookie-banner__btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.cookie-banner__btn--accept {
+  background: #fafafa;
+  color: #1c2b22;
+  border: 1px solid #fafafa;
+}
+
+.cookie-banner__btn--accept:hover {
+  background: #fafafa;
+  border-color: #fafafa;
+}
+
+.cookie-banner__btn--decline {
+  background: transparent;
+  color: #a8bfae;
+  border: 1px solid #2e4236;
+}
+
+.cookie-banner__btn--decline:hover {
+  background: #2e4236;
+  color: #ccddd0;
+  border-color: #3d5748;
+}
+
+.cookie-banner__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  color: #5a7a62;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-left: 4px;
+  transition: color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.cookie-banner__close:hover {
+  color: #a8bfae;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 580px) {
+  .cookie-banner {
+    bottom: 16px;
+    width: calc(100% - 32px);
+  }
+
+  .cookie-banner__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 18px 16px;
+  }
+
+  .cookie-banner__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .cookie-banner__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    margin-left: 0;
+  }
+
+  .cookie-banner__inner {
+    position: relative;
+  }
+}

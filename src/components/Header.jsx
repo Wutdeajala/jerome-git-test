@@ -55,12 +55,13 @@ const Navbar = () => {
               <span></span>
               <span></span>
             </div>
-
+            <Link to="/" onClick={closeMenu}>
             <img
             src={logo1}
             alt="Bima Shelter Logo"
             className="mb-lg"
-          />
+            />
+            </Link>
           </nav>
         
         <div className="header-container">
@@ -144,15 +145,12 @@ const Navbar = () => {
     <Link to="/properties" onClick={closeMenu}>
       Properties
     </Link>
-    <div className="underline"></div>
-
-    <Link
-      className="mobile-contact-btn"
-      to="/contact"
-      onClick={closeMenu}
-    >
+    <Link to="/contact" onClick={closeMenu}>
       Contact Us
     </Link>
+    <div className="underline"></div>
+
+
   </nav>
 
 </div>

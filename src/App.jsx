@@ -15,6 +15,7 @@ import SaadaCourt from "./communities/Sa'adaC.jsx";
 import Residence541 from "./communities/Residence541.jsx";
 import UmmahaniCourt from "./communities/UmmahaniC.jsx";
 import EnclaveEstate from "./communities/EnclaveE.jsx";
+import CookieBanner from "./components/CookieBanner.jsx";
 
 function App(){
     return(
@@ -22,6 +23,7 @@ function App(){
     
         <ScrollToTop />
         <Navbar/>
+        <CookieBanner/>
     <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />

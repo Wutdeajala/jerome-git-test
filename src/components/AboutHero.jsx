@@ -11,7 +11,7 @@ const AboutHero = () => {
         <h1 className="about-hero__title">About Bima Shelter</h1>
         <div className="about-hero__rule" aria-hidden="true" />
         <p className="about-hero__sub">
-          Discover the story behind Bima Shelter Ltd.
+          Discover the story behind Bima Shelter.
         </p>
       </div>
     </section>

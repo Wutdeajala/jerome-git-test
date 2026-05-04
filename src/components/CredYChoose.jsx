@@ -3,10 +3,9 @@ import { Building, Leaf, Award } from "lucide-react";
 import "./CredYChoose.css";
 
 const stats = [
-  { value: 800,  suffix: "+", label: "Featured Projects" },
-  { value: 1250, suffix: "+", label: "Luxury Houses"     },
-  { value: 1250, suffix: "+", label: "Satisfied Clients" },
+  { value: 500,  suffix: "+", label: "Featured Projects" },
   { value: 13,   suffix: "+", label: "Years Experience"  },
+  { value: 750, suffix: "+", label: "Luxury Houses"     },  
 ];
 
 const features = [
