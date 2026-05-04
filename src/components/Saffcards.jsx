@@ -8,7 +8,7 @@ const StaffCard = () => {
   return (
     <section className="leadership-section">
       {/* Section Title */}
-      <div className="card-title">OUR TEAMS</div>
+      <div className="card-title">MEET THE TEAMS</div>
       <div className="dividing" />
 
       {/* Leadership Cards Container */}
@@ -28,7 +28,7 @@ const StaffCard = () => {
                 property developer with excellence in every project.
               </p>
               <Link to="/directors" className="card-btn">
-                Meet the Board
+                OUR DIRECTORS
               </Link>
             </div>
           </div>
@@ -48,7 +48,7 @@ const StaffCard = () => {
                 properties while maintaining our position as a market leader.
               </p>
               <Link to="/team" className="card-btn">
-                Meet the Team
+                OUR TEAM
               </Link>
             </div>
           </div>

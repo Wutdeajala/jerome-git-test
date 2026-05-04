@@ -12,8 +12,8 @@ import "./LuxuryFooter.css";
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 const quickLinks = [
-  { label: "Home",       to: "/"           },
-  { label: "About",      to: "/about"      },
+  { label: "Our Directors",       to: "/directors"           },
+  { label: "Our Team",      to: "/team"      },
   { label: "Properties", to: "/properties" },
   { label: "Contact",    to: "/contact"    },
 ];

@@ -4,10 +4,9 @@ import "./Credibile.css";
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 const statsData = [
-  { value: "800",   suffix: "",  label: "Featured Projects" },
-  { value: "1,250", suffix: "",  label: "Luxury Houses"     },
-  { value: "1,250", suffix: "",  label: "Satisfied Clients" },
-  { value: "13",    suffix: "+", label: "Years Experience"  },
+  { value: "500",   suffix: "",  label: "Featured Projects" },
+  { value: "13",    suffix: "+", label: "Years Experience"  },  
+  { value: "750", suffix: "",  label: "Luxury Houses"     },
 ];
 
 // Parse a stat value to a plain integer for animation
